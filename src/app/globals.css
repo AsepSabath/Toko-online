@@ -21,7 +21,23 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
-  color: var(--foreground);
+  background: linear-gradient(120deg, #0f0c29 0%, #302b63 50%, #ff0080 100%);
+  color: #f8f8ff;
   font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 80px 0 #ff00cc44 inset, 0 0 120px 0 #00fff744 inset;
+}
+
+main, .card, .bg-white {
+  background: rgba(20, 20, 40, 0.85) !important;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 24px 0 #ff00cc55, 0 0 12px 0 #00fff755;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 0 8px #ff00cc, 0 0 4px #00fff7;
+}
+
+a, .text-blue-600, .hover\:bg-blue-700:hover {
+  color: #00fff7 !important;
+  text-shadow: 0 0 6px #ff00cc99;
 }

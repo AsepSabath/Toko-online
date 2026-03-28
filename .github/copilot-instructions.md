@@ -1,0 +1,6 @@
+- [x] Project requirements clarified: Next.js toko online sederhana, siap deploy Vercel.
+- [x] Project scaffolded: Next.js, Tailwind, ESLint, App Router, src/ structure.
+- [x] Mock data produk dan halaman utama/detail sudah dibuat.
+- [ ] README.md berisi instruksi edit dan deploy.
+- [ ] Compile & test project.
+- [ ] Siap untuk edit dan pengembangan lanjutan.

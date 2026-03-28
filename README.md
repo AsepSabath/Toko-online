@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Toko Online Sederhana (Next.js)
 
-## Getting Started
+Website toko online sederhana menggunakan Next.js, Tailwind CSS, dan mock data produk. Siap untuk dikembangkan dan dideploy ke Vercel.
 
-First, run the development server:
+## Struktur Project
+- Halaman utama: daftar produk
+- Halaman detail produk: /produk/[id]
+- Data produk: src/data/products.js
+- Gambar produk: public/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Cara Menjalankan Lokal
+1. Install dependencies:
+	```bash
+	npm install
+	```
+2. Jalankan development server:
+	```bash
+	npm run dev
+	```
+3. Buka browser ke http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit Produk
+- Edit file `src/data/products.js` untuk menambah/mengubah produk.
+- Tambahkan gambar produk ke folder `public/`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Deploy ke Vercel
+1. Push project ke GitHub.
+2. Buka https://vercel.com/import dan hubungkan repo GitHub kamu.
+3. Ikuti instruksi deploy (otomatis build & deploy).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Ganti mock data/gambar sesuai kebutuhanmu. Untuk fitur lebih lanjut (keranjang, checkout, dsb.), tambahkan sesuai keinginan.

@@ -63,13 +63,15 @@ a, .text-blue-600, .hover\:bg-blue-700:hover {
 /* Tombol minimalis dan elegan */
 button, .btn, .rounded-full {
   background: #2563eb;
-  color: #fff;
+  color: #fff !important;
+  opacity: 1 !important;
   border: none;
   border-radius: 9999px;
   padding: 0.5rem 1.25rem;
   font-weight: 600;
   box-shadow: 0 2px 8px 0 #e2e8f0;
   transition: background 0.2s, color 0.2s;
+  text-shadow: none;
 }
 button:hover, .btn:hover, .rounded-full:hover {
   background: #1e40af;

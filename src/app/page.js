@@ -1,9 +1,23 @@
+"use client";
+
 
 import Link from 'next/link';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { useState } from 'react';
 
+
+export default function Home() {
   const { cart, addToCart } = useCart();
+  const kategoriList = [
+    'Semua',
+    ...Array.from(new Set(products.map((p) => p.category || 'Lainnya'))),
+  ];
+  const [selected, setSelected] = useState('Semua');
+  const filtered = selected === 'Semua'
+    ? products
+    : products.filter((p) => (p.category || 'Lainnya') === selected);
+
   return (
     <main className="max-w-5xl mx-auto p-4">
       <div className="flex justify-between items-center mb-8">
@@ -17,8 +31,19 @@ import { useCart } from '../context/CartContext';
           )}
         </Link>
       </div>
+      <div className="flex gap-4 mb-8 flex-wrap">
+        {kategoriList.map((k) => (
+          <button
+            key={k}
+            onClick={() => setSelected(k)}
+            className={`px-4 py-2 rounded-full border-2 transition-colors font-bold ${selected === k ? 'bg-pink-600 text-white border-pink-400' : 'bg-gray-900 text-pink-300 border-pink-700'}`}
+          >
+            {k}
+          </button>
+        ))}
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {products.map((product) => (
+        {filtered.map((product) => (
           <div
             key={product.id}
             className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col items-center border border-gray-100 hover:-translate-y-1 hover:scale-105 transform"

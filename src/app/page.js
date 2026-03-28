@@ -4,7 +4,7 @@ import { products } from '../data/products';
 export default function Home() {
   return (
     <main className="max-w-5xl mx-auto p-4">
-      <h1 className="text-4xl font-extrabold mb-8 text-center text-blue-700 drop-shadow-lg tracking-tight">selamat datang di RZKstore</h1>
+      <h1 className="text-4xl font-extrabold mb-8 text-center text-blue-700 drop-shadow-lg tracking-tight">Selamat datang di RZKstore</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {products.map((product) => (
           <div

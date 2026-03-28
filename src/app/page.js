@@ -1,10 +1,22 @@
+
 import Link from 'next/link';
 import { products } from '../data/products';
+import { useCart } from '../context/CartContext';
 
-export default function Home() {
+  const { cart, addToCart } = useCart();
   return (
     <main className="max-w-5xl mx-auto p-4">
-      <h1 className="text-4xl font-extrabold mb-8 text-center text-blue-700 drop-shadow-lg tracking-tight">Selamat datang di RZKstore</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-4xl font-extrabold text-blue-700 drop-shadow-lg tracking-tight">selamat datang di RZKstore</h1>
+        <Link href="/cart" className="relative px-4 py-2 bg-pink-600 text-white rounded-full shadow hover:bg-pink-700 transition-colors font-bold">
+          🛒 Cart
+          {cart.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-yellow-400 text-black rounded-full px-2 text-xs font-bold border-2 border-pink-700 animate-bounce">
+              {cart.reduce((sum, item) => sum + item.qty, 0)}
+            </span>
+          )}
+        </Link>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {products.map((product) => (
           <div
@@ -18,12 +30,20 @@ export default function Home() {
             />
             <h2 className="font-bold text-xl mb-2 text-gray-800 text-center">{product.name}</h2>
             <p className="text-blue-600 font-semibold mb-2 text-lg">Rp{product.price.toLocaleString()}</p>
-            <Link
-              href={`/produk/${product.id}`}
-              className="mt-auto px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition-colors"
-            >
-              Lihat Detail
-            </Link>
+            <div className="flex gap-2 mt-auto">
+              <Link
+                href={`/produk/${product.id}`}
+                className="px-4 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition-colors"
+              >
+                Lihat Detail
+              </Link>
+              <button
+                onClick={() => addToCart(product)}
+                className="px-4 py-2 bg-yellow-400 text-black rounded-full shadow hover:bg-yellow-500 font-bold border-2 border-pink-700"
+              >
+                + Keranjang
+              </button>
+            </div>
           </div>
         ))}
       </div>

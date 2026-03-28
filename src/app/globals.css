@@ -53,11 +53,29 @@ p, span, li, label, .font-normal, .font-medium, .font-semibold, .font-bold {
 
 /* Elegan link style */
 a, .text-blue-600, .hover\:bg-blue-700:hover {
-  color: #00fff7 !important;
-  text-shadow:
-    0 0 6px #ff00cc99,
-    1px 1px 0 #000,
-    -1px -1px 0 #000;
-  -webkit-text-stroke: 1px #ff00cc;
-  text-stroke: 1px #ff00cc;
+  color: #2563eb !important;
+  text-shadow: none;
+  font-weight: 500;
+  -webkit-text-stroke: 0;
+  text-stroke: 0;
+}
+
+/* Tombol minimalis dan elegan */
+button, .btn, .rounded-full {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 #e2e8f0;
+  transition: background 0.2s, color 0.2s;
+}
+button:hover, .btn:hover, .rounded-full:hover {
+  background: #1e40af;
+  color: #fff;
+}
+button:active, .btn:active, .rounded-full:active {
+  background: #111827;
+  color: #fff;
 }
